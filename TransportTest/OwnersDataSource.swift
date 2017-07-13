@@ -8,27 +8,24 @@
 
 import UIKit
 
-class OwnersDataSource: BaseDataSource<OwnerEntity>, DataSourceProtocol, UITableViewDataSource {
+class OwnersDataSource: BaseDataSource<OwnerEntity> {
 
     //MARK: - DataSourceProtocol
-    func typeForDataSource() -> EntityStoreType {
+    override func typeForDataSource() -> EntityStoreType {
         
         return .Owners
     }
     
     //MARK: - UITableView Data Source
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+ 
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: OwnerTableViewCell.reuseIdentifier) as? OwnerTableViewCell else {
+            return UITableViewCell()
+        }
         
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        cell.ownerName.text = self.dataArray[indexPath.row].name
         
-        return self.dataArray.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        return UITableViewCell()
+        return cell
+
     }
 }

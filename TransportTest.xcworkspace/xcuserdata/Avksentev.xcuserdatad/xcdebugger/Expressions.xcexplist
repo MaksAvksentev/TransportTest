@@ -6,6 +6,31 @@
          contextName = "DatabaseManager.initialize() -&gt; ():DatabaseManager.swift">
       </ContextState>
       <ContextState
+         contextName = "DatabaseManager.entity&lt;A where ...&gt; (fromData : FMResultSet, type : EntityStoreType) -&gt; A?:DatabaseManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "let owner_id = data.string(forColumn: &quot;owner_id&quot;)">
+            </PersistentString>
+            <PersistentString
+               value = "data.string(forColumn: &quot;id&quot;)">
+            </PersistentString>
+            <PersistentString
+               value = "data.string(forColumn: &quot;name&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CarsDataSource.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:CarsDataSource.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dataArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DatabaseManager.(perfomRequest(DatabaseMethods, forEntity : EntityStoreState) -&gt; ()).(closure #1):DatabaseManager.swift">
+      </ContextState>
+      <ContextState
          contextName = "AppDelegate.(application(UIApplication, didFinishLaunchingWithOptions : [UIApplicationLaunchOptionsKey : Any]?) -&gt; Bool).(closure #1):AppDelegate.swift">
          <PersistentStrings>
             <PersistentString

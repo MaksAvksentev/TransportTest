@@ -15,40 +15,49 @@ enum CarsDataSourceState {
     case CarsWithoutOwner
 }
 
-class CarsDataSource: BaseDataSource<CarEntity>, DataSourceProtocol, UITableViewDataSource {
+class CarsDataSource: BaseDataSource<CarEntity> {
     
     var state: CarsDataSourceState = .All
     
-    var dataArray: [CarEntity] {
+    var owner: OwnerEntity?
+    
+    override var dataArray: [CarEntity] {
         
         switch self.state {
         case .All:
             return self.getAll()
         case .OwnersCars:
-            return self.
+            return self.getOwnersCars(owner: owner!)
+        case .CarsWithoutOwner:
+            return self.getAllCarsWithoutOwner()
         }
-        
+    
     }
-    //MARK: - 
+    
+    init(withState state: CarsDataSourceState = .All, owner: OwnerEntity? = nil) {
+        
+        super.init()
+        
+        self.state = state
+        self.owner = owner
+    }
+    
     //MARK: - DataSourceProtocol
-    func typeForDataSource() -> EntityStoreType {
+    override func typeForDataSource() -> EntityStoreType {
         
         return .Cars
     }
     
     //MARK: - UITableViewDataSource
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CarTableViewCell.reuseIdentifier) as? CarTableViewCell else {
+            return UITableViewCell()
+        }
         
-        return self.dataArray.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
-        return UITableViewCell()
+        cell.carName.text = self.dataArray[indexPath.row].name
+        cell.yearLabel.text = String(self.dataArray[indexPath.row].year)
+        
+        return cell
     }
 }

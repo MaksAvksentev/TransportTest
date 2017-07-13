@@ -13,7 +13,7 @@ protocol DataSourceProtocol: class {
     func typeForDataSource() -> EntityStoreType
 }
 
-class BaseDataSource<T: BaseEntity>: NSObject {
+class BaseDataSource<T: BaseEntity>: NSObject, DataSourceProtocol, UITableViewDataSource {
 
     var type: EntityStoreType = .Undefined
     
@@ -27,16 +27,15 @@ class BaseDataSource<T: BaseEntity>: NSObject {
     override init() {
         
         super.init()
+        self.delegate = self
         self.initialize()
     }
     
-    init(forType type: EntityStoreType) {
+    //MARK: - DataSourceProtocol
+    func typeForDataSource() -> EntityStoreType {
         
-        self.type = type
-        
-        super.init()
+        return .Undefined
     }
-    
     //MARK: - Main
     func initialize() {
         
@@ -49,7 +48,7 @@ class BaseDataSource<T: BaseEntity>: NSObject {
     
     func create(entity: T) -> Bool {
         
-        return DatabaseManager.shared.operation(withEntity: entity, method: .update, forType: self.type)
+        return DatabaseManager.shared.operation(withEntity: entity, method: .create, forType: self.type)
     }
     
     func update(entity: T) -> Bool {
@@ -59,35 +58,45 @@ class BaseDataSource<T: BaseEntity>: NSObject {
     
     func delete(entity: T) -> Bool {
         
-        return DatabaseManager.shared.operation(withEntity: entity, method: .update, forType: self.type)
+        return DatabaseManager.shared.operation(withEntity: entity, method: .delete, forType: self.type)
     }
     
     func getEntity(withId id: String) -> T? {
     
-        guard let tempSet = DatabaseManager.shared.getEntity(withId: id, forType: self.type) else {
+        let entity = DatabaseManager.shared.entity(fromData: DatabaseManager.shared.getEntity(withId: id, forType: self.type), type: self.type)
         
-            return nil
-        }
-        
-        return DatabaseManager.shared.entity(fromData: tempSet, type: self.type)
+        return entity as! T?
     }
     
     func getAll() -> [T] {
     
-        var array = [T]()
-        guard let set = DatabaseManager.shared.getAll(forType: self.type) else {
+        let array = DatabaseManager.shared.getArray(fromSet: DatabaseManager.shared.getAll(forType: self.type), withType: self.type)
         
-            return array
-        }
+        return array as! [T]
+    }
+    
+    func getOwnersCars(owner: OwnerEntity) -> [T] {
+    
+        let array = DatabaseManager.shared.getArray(fromSet: DatabaseManager.shared.getOwnersCars(owner: owner), withType: self.type)
+       
+        return array as! [T]
+    }
+    
+    func getAllCarsWithoutOwner() -> [T] {
         
-        while set.next() {
-            
-            if let entity = DatabaseManager.shared.entity(fromData: set, type: self.type) as? T {
-            
-                array.append(entity)
-            }
-        }
+        let array = DatabaseManager.shared.getArray(fromSet: DatabaseManager.shared.getAllCarsWithoutOwner(), withType: self.type)
         
-        return array
+        return array as! [T]
+    }
+    
+    //MARK: - UITableViewDataSource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return self.dataArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        return UITableViewCell()
     }
 }

@@ -9,15 +9,6 @@
 import UIKit
 import FMDB
 
-struct DatabaseParametrs {
-
-    static let name = "transport"
-    static let type = "sqlite"
-    static let fileName = "transport.sqlite"
-}
-
-typealias EntityStoreCompletionHandler = () -> Void//(Bool, Error?) -> Void
-
 class DatabaseManager: NSObject {
     
     private static let sharedStore = DatabaseManager()
@@ -63,7 +54,6 @@ class DatabaseManager: NSObject {
         self.database.open()
         let request = DatabaseMethods.prepareRequest(.get, forType: type)
         let set = self.database.executeQuery(request, withArgumentsIn: [id])
-        self.database.close()
         
         return set
     }
@@ -73,7 +63,6 @@ class DatabaseManager: NSObject {
         self.database.open()
         let request = DatabaseMethods.prepareRequest(.getAll, forType: type)
         let set = self.database.executeQuery(request, withArgumentsIn: [])
-        self.database.close()
         
         return set
     }
@@ -83,7 +72,6 @@ class DatabaseManager: NSObject {
         self.database.open()
         let request = DatabaseMethods.prepareRequest(.getAllCarsWithoutOwner, forType: EntityStoreType.Owners)
         let set = self.database.executeQuery(request, withArgumentsIn: [])
-        self.database.close()
         
         return set
     }
@@ -93,37 +81,69 @@ class DatabaseManager: NSObject {
         self.database.open()
         let request = DatabaseMethods.prepareRequest(.getOwnersCars, forType: EntityStoreType.Owners)
         let set = self.database.executeQuery(request, withArgumentsIn: [owner.id])
-        self.database.close()
         
         return set
     }
     
-    func entity<T: BaseEntity>(fromData data: FMResultSet, type: EntityStoreType) -> T? {
-    
+    func entity<T: BaseEntity>(fromData data: FMResultSet?, type: EntityStoreType) -> T? {
+        
+        guard let data = data else {
+            
+            return nil
+        }
+        
         switch type {
         case .Cars:
             
-            if let id = data.string(forColumn: "id"), let name = data.string(forColumn: "name"), let owner_id = data.string(forColumn: "owner_id") {
-                
+                let name = data.string(forColumn: "name")
+                let owner_id = data.string(forColumn: "owner_id")
+                let id = String(data.int(forColumn: "id"))
                 let year = data.int(forColumn: "year")
-                let car = CarEntity(id: id, name: name, year: year, owner_id: owner_id)
+                let car = CarEntity(id: id, name: name!, year: year, owner_id: owner_id!)
                 
                 return car as? T
-            }
+            
         case .Owners:
             
-            if let id = data.string(forColumn: "id"), let name = data.string(forColumn: "name") {
+            
+                let id = data.string(forColumn: "owner_id")
+                let name = data.string(forColumn: "name")
                 
-                let owner = OwnerEntity(id: id, name: name)
+                let owner = OwnerEntity(id: id!, name: name!)
                 
                 return owner as? T
-            }
+            
         case .Undefined:
             
             break
         }
         
         return nil
+    }
+    
+    func getArray<T: BaseEntity>(fromSet set: FMResultSet?, withType type: EntityStoreType) -> [T] {
+        
+        var array = [T]()
+        
+        guard let tempSet = set else {
+        
+            self.database.close()
+            
+            return array
+        }
+        
+        while tempSet.next() {
+            
+            if let entity = DatabaseManager.shared.entity(fromData: tempSet, type: type) as? T {
+                
+                array.append(entity)
+            }
+        }
+        
+        self.database.close()
+        
+        return array
+        
     }
     
     //MARK: - Private
