@@ -1,0 +1,6 @@
+framework module Pods_TransportTest {
+  umbrella header "Pods-TransportTest-umbrella.h"
+
+  export *
+  module * { export * }
+}
