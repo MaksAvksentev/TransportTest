@@ -54,7 +54,7 @@ enum EntityStoreType {
             case .delete:
                 return "WHERE owner_id=?"
             case .getAllCarsWithoutOwner:
-                return "WHERE owner_id=0"
+                return "WHERE owner_id=?"
             case .getOwnersCars:
                 return "WHERE \(EntityStoreType.Owners.tableName()).owner_id = \(EntityStoreType.Cars.tableName()).owner_id AND \(EntityStoreType.Owners.tableName()).owner_id=?"
             default:

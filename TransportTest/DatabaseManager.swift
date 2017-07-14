@@ -97,7 +97,7 @@ class DatabaseManager: NSObject {
             
                 let name = data.string(forColumn: "name")
                 let owner_id = data.string(forColumn: "owner_id")
-                let id = String(data.int(forColumn: "id"))
+                let id = String(data.int(forColumn: "car_id"))
                 let year = data.int(forColumn: "year")
                 let car = CarEntity(id: id, name: name!, year: year, owner_id: owner_id!)
                 

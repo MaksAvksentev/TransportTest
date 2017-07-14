@@ -30,9 +30,10 @@
 		288FE8F21F17FD6900C8DF71 /* OwnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE8F11F17FD6900C8DF71 /* OwnersViewController.swift */; };
 		288FE8F51F1820B600C8DF71 /* DataManagmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE8F41F1820B600C8DF71 /* DataManagmentViewController.swift */; };
 		288FE8F81F18214A00C8DF71 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE8F71F18214A00C8DF71 /* DataViewController.swift */; };
-		288FE8FA1F18245800C8DF71 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE8F91F18245800C8DF71 /* EditViewController.swift */; };
-		288FE8FC1F18246300C8DF71 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE8FB1F18246300C8DF71 /* AddViewController.swift */; };
 		288FE8FE1F182F1A00C8DF71 /* DatabaseUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE8FD1F182F1A00C8DF71 /* DatabaseUtilities.swift */; };
+		288FE9001F18382600C8DF71 /* CarManagmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE8FF1F18382600C8DF71 /* CarManagmentViewController.swift */; };
+		288FE9021F18383C00C8DF71 /* OwnerManagmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE9011F18383C00C8DF71 /* OwnerManagmentViewController.swift */; };
+		288FE9041F18448100C8DF71 /* StoryboardUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE9031F18448100C8DF71 /* StoryboardUtilities.swift */; };
 		3B438D4D6A81089C5C1A71C2 /* Pods_TransportTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88FD9E6F7A9A5C1543D48EE /* Pods_TransportTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,9 +65,10 @@
 		288FE8F11F17FD6900C8DF71 /* OwnersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnersViewController.swift; sourceTree = "<group>"; };
 		288FE8F41F1820B600C8DF71 /* DataManagmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagmentViewController.swift; sourceTree = "<group>"; };
 		288FE8F71F18214A00C8DF71 /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
-		288FE8F91F18245800C8DF71 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
-		288FE8FB1F18246300C8DF71 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		288FE8FD1F182F1A00C8DF71 /* DatabaseUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseUtilities.swift; sourceTree = "<group>"; };
+		288FE8FF1F18382600C8DF71 /* CarManagmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarManagmentViewController.swift; sourceTree = "<group>"; };
+		288FE9011F18383C00C8DF71 /* OwnerManagmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerManagmentViewController.swift; sourceTree = "<group>"; };
+		288FE9031F18448100C8DF71 /* StoryboardUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardUtilities.swift; sourceTree = "<group>"; };
 		B3196711C0CA6FCBEC5CBA32 /* Pods-TransportTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransportTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransportTest/Pods-TransportTest.debug.xcconfig"; sourceTree = "<group>"; };
 		D88FD9E6F7A9A5C1543D48EE /* Pods_TransportTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransportTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE32270CC46E280DCB2B209C /* Pods-TransportTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransportTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransportTest/Pods-TransportTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				288FE8FD1F182F1A00C8DF71 /* DatabaseUtilities.swift */,
+				288FE9031F18448100C8DF71 /* StoryboardUtilities.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -221,8 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				288FE8F41F1820B600C8DF71 /* DataManagmentViewController.swift */,
-				288FE8F91F18245800C8DF71 /* EditViewController.swift */,
-				288FE8FB1F18246300C8DF71 /* AddViewController.swift */,
+				288FE8FF1F18382600C8DF71 /* CarManagmentViewController.swift */,
+				288FE9011F18383C00C8DF71 /* OwnerManagmentViewController.swift */,
 			);
 			name = ManagmentViewControllers;
 			sourceTree = "<group>";
@@ -365,15 +368,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				288FE8DC1F17B0FA00C8DF71 /* BaseEntity.swift in Sources */,
+				288FE9021F18383C00C8DF71 /* OwnerManagmentViewController.swift in Sources */,
 				288FE8DA1F17AFCD00C8DF71 /* OwnersDataSource.swift in Sources */,
-				288FE8FC1F18246300C8DF71 /* AddViewController.swift in Sources */,
 				288FE8E51F17FB8100C8DF71 /* CarTableViewCell.swift in Sources */,
+				288FE9001F18382600C8DF71 /* CarManagmentViewController.swift in Sources */,
 				288FE8BA1F1676E700C8DF71 /* OwnerEntity.swift in Sources */,
 				288FE8F21F17FD6900C8DF71 /* OwnersViewController.swift in Sources */,
 				288FE8FE1F182F1A00C8DF71 /* DatabaseUtilities.swift in Sources */,
 				288FE8D61F177D1300C8DF71 /* BaseDataSource.swift in Sources */,
 				288FE8D81F17AFBC00C8DF71 /* CarsDataSource.swift in Sources */,
-				288FE8FA1F18245800C8DF71 /* EditViewController.swift in Sources */,
+				288FE9041F18448100C8DF71 /* StoryboardUtilities.swift in Sources */,
 				288FE8DE1F17EAE400C8DF71 /* BaseViewController.swift in Sources */,
 				288FE8F51F1820B600C8DF71 /* DataManagmentViewController.swift in Sources */,
 				288FE8B81F1676DC00C8DF71 /* CarEntity.swift in Sources */,
