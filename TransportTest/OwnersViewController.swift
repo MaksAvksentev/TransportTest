@@ -15,15 +15,18 @@ class OwnersViewController: DataViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
         self.tableView.dataSource = self.dataSource
-        self.tableView.delegate = self
         self.dataSource.initialize()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        super.prepare(for: segue, sender: sender)
     }
     
     //MARK: - Actions
@@ -38,13 +41,20 @@ class OwnersViewController: DataViewController {
     //MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: StoryboardSegues.fromOwnersToOwnerPage, sender: self.dataSource.dataArray[indexPath.row])
     }
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
             
-            let _ = self.dataSource.delete(entity: self.dataSource.dataArray[indexPath.row])
+            if !self.dataSource.delete(entity: self.dataSource.dataArray[indexPath.row]) {
+                
+                log.error("Error operation with database", LogModule: .CoreData)
+                self.presentDataBaseAlert()
+            }
+            
             self.tableView.reloadData()
         }
         
@@ -53,7 +63,7 @@ class OwnersViewController: DataViewController {
             let viewController = UIStoryboard.loadOwnerManagmentFromMain(OwnerManagmentViewController.className)
             viewController.entityType = EntityStoreType.Owners
             viewController.managmentState = .Edit
-            viewController.owner = self.dataSource.dataArray[indexPath.row]
+            viewController.entity = self.dataSource.dataArray[indexPath.row]
             self.navigationController?.pushViewController(viewController, animated: true)
         }
         

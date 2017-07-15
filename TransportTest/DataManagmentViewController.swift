@@ -14,16 +14,12 @@ enum DataManagmentState {
     case Undefined
 }
 
-protocol DataMangmentProtocol {
-    
-    func typeOfManagment() -> DataManagmentState
-}
-
-class DataManagmentViewController: UIViewController, DataMangmentProtocol {
+class DataManagmentViewController: BaseViewController {
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var year: UITextField!
     @IBOutlet weak var controlButton: UIButton!
+    @IBOutlet weak var titleItem: UINavigationItem!
     
     var entityType: EntityStoreType = .Undefined
     var managmentState: DataManagmentState = .Undefined
@@ -44,27 +40,61 @@ class DataManagmentViewController: UIViewController, DataMangmentProtocol {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        self.configureButton()
+
+        self.configureTextFields()
+        self.self.hideKeyboardWhenTappedAround()
     }
     
-    //MARK: - Private
-    private func configureButton() {
+    override func viewWillAppear(_ animated: Bool) {
         
-        switch managmentState {
+        super.viewWillAppear(animated)
+        
+        self.configureNavigationBarAndButton()
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.navigationBar.topItem?.title = ""
+    }
+
+    //MARK: - Private
+    private func configureNavigationBarAndButton() {
+        
+        self.navigationController?.navigationBar.topItem?.title = ""
+        
+        switch self.managmentState {
         case .Add:
-            self.controlButton.setTitle("Add", for: .application)
+            self.titleItem.title = "Add"
+            self.controlButton.setTitle("Add", for: .normal)
         default:
-            self.controlButton.setTitle("Save", for: .application)
+            self.titleItem.title = "Edit"
+            self.controlButton.setTitle("Save", for: .normal)
         }
     }
     
-    //MARK: - Actions
-    @IBAction func controlButtonPressed() {}
+    func configureTextFields() {
     
-    //MARK: - DataMangmentProtocol
-    func typeOfManagment() -> DataManagmentState {
-        
-        return .Undefined
+        self.controlButton.isEnabled = false
+        self.year.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
+        self.nameField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
     }
+    
+    //MARK: - Check TextFields
+    func editingChanged(_ textField: UITextField) {
+        
+        if textField.text?.characters.count == 1 {
+            if textField.text?.characters.first == " " {
+                textField.text = ""
+                return
+            }
+        }
+        
+        guard let name = nameField.text, !name.isEmpty, let tempYear = year.text, !tempYear.isEmpty, let tempYearInt = Int(tempYear), tempYearInt>=1758, tempYearInt<=2017
+            else {
+                controlButton.isEnabled = false
+                return
+        }
+
+        controlButton.isEnabled = true
+    }
+    
+    //MARK: - Actions
+    func controlButtonPressed() { }
 }
