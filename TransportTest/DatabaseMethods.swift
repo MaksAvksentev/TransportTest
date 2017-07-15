@@ -54,7 +54,7 @@ enum EntityStoreType {
             case .delete:
                 return "WHERE owner_id=?"
             case .getAllCarsWithoutOwner:
-                return "WHERE owner_id=?"
+                return "WHERE owner_id=0"
             case .getOwnersCars:
                 return "WHERE \(EntityStoreType.Owners.tableName()).owner_id = \(EntityStoreType.Cars.tableName()).owner_id AND \(EntityStoreType.Owners.tableName()).owner_id=?"
             default:
@@ -93,7 +93,7 @@ enum DatabaseMethods {
         case .getAll:
             return "SELECT * FROM \(type.tableName())"
         case .getAllCarsWithoutOwner:
-            return "SELECT * FROM \(EntityStoreType.Cars.tableName()) \(type.requestArguments(forMethod: method))"
+            return "SELECT * FROM \(EntityStoreType.Cars.tableName()) \(EntityStoreType.Owners.requestArguments(forMethod: method))"
         case .getOwnersCars:
             return "SELECT * FROM \(EntityStoreType.Owners.tableName()) JOIN \(EntityStoreType.Cars.tableName()) \(type.requestArguments(forMethod: method))"
         }

@@ -24,7 +24,7 @@ class BaseDataSource<T: BaseEntity>: NSObject, DataSourceProtocol, UITableViewDa
 
     weak var delegate: DataSourceProtocol?
     
-    override init() {
+    override required init() {
         
         super.init()
         self.delegate = self
@@ -36,6 +36,7 @@ class BaseDataSource<T: BaseEntity>: NSObject, DataSourceProtocol, UITableViewDa
         
         return .Undefined
     }
+    
     //MARK: - Main
     func initialize() {
         
@@ -63,9 +64,9 @@ class BaseDataSource<T: BaseEntity>: NSObject, DataSourceProtocol, UITableViewDa
     
     func getEntity(withId id: String) -> T? {
     
-        let entity = DatabaseManager.shared.entity(fromData: DatabaseManager.shared.getEntity(withId: id, forType: self.type), type: self.type)
+        let array = DatabaseManager.shared.getArray(fromSet: DatabaseManager.shared.getEntity(withId: id, forType: self.type), withType: self.type)
         
-        return entity as! T?
+        return array[0] as? T
     }
     
     func getAll() -> [T] {

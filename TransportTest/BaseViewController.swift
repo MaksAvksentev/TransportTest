@@ -10,4 +10,8 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    func presentDataBaseAlert() {
+    
+        self.presentAlert(withTitle: "Database Error", andMessage: "Request to database returned false!")
+    }
 }

@@ -42,6 +42,11 @@ class CarsDataSource: BaseDataSource<CarEntity> {
         self.owner = owner
     }
     
+    required init() {
+
+        super.init()
+    }
+    
     //MARK: - DataSourceProtocol
     override func typeForDataSource() -> EntityStoreType {
         
