@@ -95,23 +95,27 @@ class DatabaseManager: NSObject {
         switch type {
         case .Cars:
             
-                let name = data.string(forColumn: "name")
-                let owner_id = data.string(forColumn: "owner_id")
-                let id = String(data.int(forColumn: "car_id"))
-                let year = data.int(forColumn: "year")
-                let car = CarEntity(id: id, name: name!, year: year, owner_id: owner_id!)
-                
-                return car as? T
+            guard let name = data.string(forColumn: "name"), let owner_id = data.string(forColumn: "owner_id"), let id = data.string(forColumn: "car_id") else {
+            
+                return  nil
+            }
+            
+            let year = data.int(forColumn: "year")
+            let car = CarEntity(id: id, name: name, year: year, owner_id: owner_id)
+            
+            return car as? T
             
         case .Owners:
             
             
-                let id = data.string(forColumn: "owner_id")
-                let name = data.string(forColumn: "name")
+            guard let id = data.string(forColumn: "owner_id"), let name = data.string(forColumn: "name") else {
+            
+                return nil
+            }
                 
-                let owner = OwnerEntity(id: id!, name: name!)
+            let owner = OwnerEntity(id: id, name: name)
                 
-                return owner as? T
+            return owner as? T
             
         case .Undefined:
             
@@ -167,9 +171,9 @@ class DatabaseManager: NSObject {
                 
                 try FileManager.default.copyItem(atPath: paths.0.path, toPath: paths.1.path)
                 
-            } catch _  {
+            } catch let error {
                 
-                //FIXME: - Handle Error with copy DB
+                log.error("Error with copy database: \(error.localizedDescription)", LogModule: .CoreData)
             }
         }
     }

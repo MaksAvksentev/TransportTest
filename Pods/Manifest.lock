@@ -1,14 +1,22 @@
 PODS:
+  - CocoaLumberjack/Default (3.2.0)
+  - CocoaLumberjack/Swift (3.2.0):
+    - CocoaLumberjack/Default
   - FMDB (2.7.2):
     - FMDB/standard (= 2.7.2)
   - FMDB/standard (2.7.2)
+  - IQKeyboardManagerSwift (4.0.8)
 
 DEPENDENCIES:
+  - CocoaLumberjack/Swift
   - FMDB
+  - IQKeyboardManagerSwift (= 4.0.8)
 
 SPEC CHECKSUMS:
+  CocoaLumberjack: 9b4aed7073d242f29cc2f62068d995faf67f703a
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
 
-PODFILE CHECKSUM: 319c3e4cad9d119794a37d16284494cca6036da0
+PODFILE CHECKSUM: b9872c99572c827efb9580bfa64cc860a189d4b0
 
 COCOAPODS: 1.2.0
