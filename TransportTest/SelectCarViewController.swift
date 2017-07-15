@@ -45,7 +45,7 @@ class SelectCarViewController: CarsViewController {
             
             if !self.dataSource.update(entity: car) {
                 
-                log.error("Error operation with database", LogModule: .CoreData)
+                log.error("Error operation with database", LogModule: .Database)
                 self.presentDataBaseAlert()
             }
             

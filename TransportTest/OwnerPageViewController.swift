@@ -25,6 +25,16 @@ class OwnerPageViewController: CarsViewController {
         self.tabBarController?.tabBar.isHidden = true
         self.tableView.allowsSelection = false
         self.navigationController?.navigationBar.topItem?.title = ""
+        self.checkCars()
+    }
+    
+    //MARK: - Private
+    private func checkCars() {
+    
+        if self.dataSource.dataArray.count == 0 {
+        
+            self.presentAlert(withTitle: "Attention", andMessage: "Owner hasn't cars")
+        }
     }
     
     //MARK: Actions
@@ -69,7 +79,7 @@ class OwnerPageViewController: CarsViewController {
             
             if !self.dataSource.update(entity: car) {
                 
-                log.error("Error operation with database", LogModule: .CoreData)
+                log.error("Error operation with database", LogModule: .Database)
                 self.presentDataBaseAlert()
             }
             

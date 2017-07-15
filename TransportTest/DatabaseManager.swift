@@ -173,7 +173,7 @@ class DatabaseManager: NSObject {
                 
             } catch let error {
                 
-                log.error("Error with copy database: \(error.localizedDescription)", LogModule: .CoreData)
+                log.error("Error with copy database: \(error.localizedDescription)", LogModule: .Database)
             }
         }
     }

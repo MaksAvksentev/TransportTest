@@ -45,14 +45,14 @@ class CarManagmentViewController: DataManagmentViewController {
             
             if !DatabaseManager.shared.operation(withEntity: car, method: .create, forType: self.entityType) {
                 
-                log.error("Error operation with database", LogModule: .CoreData)
+                log.error("Error operation with database", LogModule: .Database)
                 self.presentDataBaseAlert()
             }
         case .Edit:
             
             if !DatabaseManager.shared.operation(withEntity: car, method: .update, forType: self.entityType) {
                 
-                log.error("Error operation with database", LogModule: .CoreData)
+                log.error("Error operation with database", LogModule: .Database)
                 self.presentDataBaseAlert()
             }
         default:

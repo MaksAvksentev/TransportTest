@@ -61,7 +61,7 @@ import UIKit
             
             if !self.dataSource.delete(entity: self.dataSource.dataArray[indexPath.row]) {
                 
-                log.error("Error operation with database", LogModule: .CoreData)
+                log.error("Error operation with database", LogModule: .Database)
                 self.presentDataBaseAlert()
             }
             

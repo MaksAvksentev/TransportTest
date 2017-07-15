@@ -10,7 +10,7 @@ import CocoaLumberjack
 
 enum LogModule: Int, CustomStringConvertible {
     case HTTP
-    case CoreData
+    case Database
     case JSON
     case UI
     case none
@@ -19,8 +19,8 @@ enum LogModule: Int, CustomStringConvertible {
         switch self {
         case .HTTP:
             return "HTTP    "
-        case .CoreData:
-            return "CoreData"
+        case .Database:
+            return "Database"
         case .JSON:
             return "JSON    "
         case .UI:

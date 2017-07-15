@@ -66,14 +66,14 @@ class OwnerManagmentViewController: DataManagmentViewController {
             
             if !DatabaseManager.shared.operation(withEntity: owner, method: .create, forType: self.entityType) {
                 
-                log.error("Error operation with database", LogModule: .CoreData)
+                log.error("Error operation with database", LogModule: .Database)
                 self.presentDataBaseAlert()
             }
         case .Edit:
             
             if !DatabaseManager.shared.operation(withEntity: owner, method: .update, forType: self.entityType) {
                 
-                log.error("Error operation with database", LogModule: .CoreData)
+                log.error("Error operation with database", LogModule: .Database)
                 self.presentDataBaseAlert()
             }
         default:

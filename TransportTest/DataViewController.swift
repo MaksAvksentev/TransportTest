@@ -23,13 +23,14 @@ class DataViewController: BaseViewController, UITableViewDelegate {
         
         super.viewWillAppear(animated)
         self.tableView.reloadData()
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
         super.viewDidAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         guard let id = segue.identifier, let controller = segue.destination as? OwnerPageViewController else {
