@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "BaseDataSource.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:BaseDataSource.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.dataArray.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DatabaseManager.initialize() -&gt; ():DatabaseManager.swift">
+      </ContextState>
+      <ContextState
+         contextName = "OwnerManagmentViewController.controlButtonPressed() -&gt; ():OwnerManagmentViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "BaseDataSource.delete(entity : A) -&gt; Bool:BaseDataSource.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CarsDataSource.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:CarsDataSource.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dataArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.(application(UIApplication, didFinishLaunchingWithOptions : [UIApplicationLaunchOptionsKey : Any]?) -&gt; Bool).(closure #1):AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "DatabaseManager.shared.database.databaseURL">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DatabaseManager.(perfomRequest(DatabaseMethods, forEntity : EntityStoreState) -&gt; ()).(closure #1):DatabaseManager.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CarsViewController.(tableView(UITableView, editActionsForRowAt : IndexPath) -&gt; [UITableViewRowAction]?).(closure #1):CarsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.dataSource.dataArray[indexPath.row]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "OwnersViewController.(tableView(UITableView, editActionsForRowAt : IndexPath) -&gt; [UITableViewRowAction]?).(closure #1):OwnersViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.dataSource.dataArray[indexPath.row]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CarsDataSource.dataArray.getter:CarsDataSource.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.dataArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SelectCarViewController.viewDidLoad() -&gt; ():SelectCarViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DatabaseManager.entity&lt;A where ...&gt; (fromData : FMResultSet, type : EntityStoreType) -&gt; A?:DatabaseManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "let owner_id = data.string(forColumn: &quot;owner_id&quot;)">
+            </PersistentString>
+            <PersistentString
+               value = "data.string(forColumn: &quot;id&quot;)">
+            </PersistentString>
+            <PersistentString
+               value = "data.string(forColumn: &quot;name&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
