@@ -4,6 +4,4 @@
 target 'TransportTest' do
 	use_frameworks!
 	pod 'FMDB'
-	pod 'CocoaLumberjack/Swift'
-	pod 'IQKeyboardManagerSwift', '4.0.8'
 end

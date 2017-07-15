@@ -14,14 +14,14 @@
         <scene sceneID="LJT-Ev-mFC">
             <objects>
                 <navigationController id="n7Z-aA-rzO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cars" image="car" id="AJT-rR-9dB"/>
+                    <tabBarItem key="tabBarItem" title="Cars" id="AJT-rR-9dB"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="zEF-pa-2ii">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="4Rs-op-N2d" kind="relationship" relationship="rootViewController" id="pRQ-NX-Ecr"/>
+                        <segue destination="4Rs-op-N2d" kind="relationship" relationship="rootViewController" id="5SI-Xi-mkp"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jFq-cg-9Lm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -51,7 +51,7 @@
         <scene sceneID="xPE-uM-eXB">
             <objects>
                 <navigationController id="Kth-C6-3Gl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Owners" image="owner" id="oz4-A6-ZPj"/>
+                    <tabBarItem key="tabBarItem" title="Owners" id="oz4-A6-ZPj"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="VYz-V9-M32">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -68,7 +68,7 @@
         <!--Cars-->
         <scene sceneID="O0a-tO-bJp">
             <objects>
-                <viewController storyboardIdentifier="CarsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4Rs-op-N2d" customClass="CarsViewController" customModule="TransportTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4Rs-op-N2d" customClass="CarsViewController" customModule="TransportTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="p6D-d8-VpK"/>
                         <viewControllerLayoutGuide type="bottom" id="gqY-d0-dTm"/>
@@ -79,8 +79,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kEg-Hg-wSA">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                                <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="separatorColor" red="0.0008393895796" green="0.67225955309999996" blue="0.0013022658149999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -100,16 +99,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="kEg-Hg-wSA" id="zSc-eZ-PQ4"/>
-                        <segue destination="4Lb-Fk-mCb" kind="show" identifier="managmentCar" id="vgi-Wa-v6z"/>
-                        <segue destination="wGP-Ky-mtH" kind="show" identifier="FromCarsToOwnerPage" id="ud8-ad-i68"/>
+                        <outlet property="tableView" destination="kEg-Hg-wSA" id="EHm-TW-WyS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9L-gi-hHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1329" y="2614"/>
         </scene>
-        <!--Add car-->
+        <!--Car Managment View Controller-->
         <scene sceneID="CGc-U4-WWP">
             <objects>
                 <viewController storyboardIdentifier="CarManagmentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4Lb-Fk-mCb" customClass="CarManagmentViewController" customModule="TransportTest" customModuleProvider="target" sceneMemberID="viewController">
@@ -119,13 +116,13 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NhN-jC-Ltn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jKd-qJ-Hi9">
-                                <rect key="frame" x="37" y="104" width="300" height="200"/>
+                                <rect key="frame" x="29" y="234" width="317" height="199"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MRQ-p0-HB2">
-                                        <rect key="frame" x="117" y="8" width="163" height="30"/>
+                                        <rect key="frame" x="117" y="8" width="180" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="2XB-6v-jcf"/>
                                         </constraints>
@@ -143,7 +140,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O0S-jK-nH7">
-                                        <rect key="frame" x="117" y="58" width="163" height="30"/>
+                                        <rect key="frame" x="117" y="58" width="180" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="cmO-48-ldf"/>
                                         </constraints>
@@ -161,7 +158,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIB-1I-VEB">
-                                        <rect key="frame" x="90" y="138" width="120" height="40"/>
+                                        <rect key="frame" x="98" y="138" width="120" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="cmv-uL-HYD"/>
@@ -179,7 +176,7 @@
                                 <color key="backgroundColor" red="0.0008393895796" green="0.67225955309999996" blue="0.0013022658149999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="O0S-jK-nH7" firstAttribute="top" secondItem="MRQ-p0-HB2" secondAttribute="bottom" constant="20" id="8QY-hY-5EG"/>
-                                    <constraint firstAttribute="height" constant="200" id="BiP-8Q-pCD"/>
+                                    <constraint firstAttribute="height" constant="199" id="BiP-8Q-pCD"/>
                                     <constraint firstAttribute="trailing" secondItem="MRQ-p0-HB2" secondAttribute="trailing" constant="20" id="TCb-zr-c8l"/>
                                     <constraint firstItem="O0S-jK-nH7" firstAttribute="leading" secondItem="RkG-Wx-Txt" secondAttribute="trailing" constant="27" id="W3r-2i-XIc"/>
                                     <constraint firstItem="MRQ-p0-HB2" firstAttribute="leading" secondItem="dnv-5Q-dZA" secondAttribute="trailing" constant="27" id="aAo-HO-esz"/>
@@ -191,28 +188,28 @@
                                     <constraint firstAttribute="centerX" secondItem="cIB-1I-VEB" secondAttribute="centerX" id="lJU-Q6-X4X"/>
                                     <constraint firstItem="dnv-5Q-dZA" firstAttribute="top" secondItem="jKd-qJ-Hi9" secondAttribute="top" constant="12" id="nKL-qk-Mwc"/>
                                     <constraint firstItem="cIB-1I-VEB" firstAttribute="top" secondItem="O0S-jK-nH7" secondAttribute="bottom" constant="50" id="w9Y-8J-cLS"/>
-                                    <constraint firstAttribute="width" constant="300" id="xHG-gy-LRt"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="jKd-qJ-Hi9" firstAttribute="top" secondItem="tTY-bf-dpZ" secondAttribute="bottom" constant="40" id="5ap-uk-xna"/>
-                            <constraint firstItem="jKd-qJ-Hi9" firstAttribute="centerX" secondItem="NhN-jC-Ltn" secondAttribute="centerX" id="H74-Qe-3Og"/>
+                            <constraint firstItem="jKd-qJ-Hi9" firstAttribute="centerX" secondItem="NhN-jC-Ltn" secondAttribute="centerX" id="LLR-QK-8Lz"/>
+                            <constraint firstItem="jKd-qJ-Hi9" firstAttribute="leading" secondItem="NhN-jC-Ltn" secondAttribute="leadingMargin" constant="13" id="M9d-2h-coD"/>
+                            <constraint firstItem="jKd-qJ-Hi9" firstAttribute="centerX" secondItem="NhN-jC-Ltn" secondAttribute="centerX" id="MoB-MP-EaI"/>
+                            <constraint firstItem="jKd-qJ-Hi9" firstAttribute="centerX" secondItem="NhN-jC-Ltn" secondAttribute="centerX" id="Rlc-2u-SAE"/>
+                            <constraint firstItem="jKd-qJ-Hi9" firstAttribute="centerX" secondItem="NhN-jC-Ltn" secondAttribute="centerX" id="ilf-aa-2g5"/>
+                            <constraint firstItem="jKd-qJ-Hi9" firstAttribute="centerY" secondItem="NhN-jC-Ltn" secondAttribute="centerY" id="jNv-NI-ie6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add car" id="Oqd-LE-RRN"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
                         <outlet property="controlButton" destination="cIB-1I-VEB" id="CRD-g7-mah"/>
                         <outlet property="nameField" destination="MRQ-p0-HB2" id="DTw-Lz-TFF"/>
-                        <outlet property="titleItem" destination="Oqd-LE-RRN" id="QZX-3o-jzG"/>
                         <outlet property="year" destination="O0S-jK-nH7" id="C4l-bo-Mmu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t6e-8a-VHA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2560.8000000000002" y="2252.9235382308848"/>
+            <point key="canvasLocation" x="2502" y="2614"/>
         </scene>
         <!--Owners-->
         <scene sceneID="LZa-dt-9XU">
@@ -228,8 +225,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ipd-Lm-3L7">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                                <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="separatorColor" red="0.0008393895796" green="0.67225955309999996" blue="0.0013022658149999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -249,16 +245,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="ipd-Lm-3L7" id="bUt-N6-6oP"/>
-                        <segue destination="Rdr-dC-AOs" kind="show" identifier="managmentOwner" id="lRA-ke-WfW"/>
-                        <segue destination="wGP-Ky-mtH" kind="show" identifier="FromOwnersToOwnerPage" id="zwl-5f-Lhe"/>
+                        <outlet property="tableView" destination="ipd-Lm-3L7" id="CF0-AZ-tMu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VSy-Bu-9MA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1329" y="3469"/>
         </scene>
-        <!--Add Owner-->
+        <!--Owner Managment View Controller-->
         <scene sceneID="GQT-vQ-3nB">
             <objects>
                 <viewController storyboardIdentifier="OwnerManagmentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rdr-dC-AOs" customClass="OwnerManagmentViewController" customModule="TransportTest" customModuleProvider="target" sceneMemberID="viewController">
@@ -279,7 +273,7 @@
                                             <constraint firstAttribute="height" constant="30" id="YpO-hE-0oD"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XxP-43-BST">
                                         <rect key="frame" x="20" y="12" width="70" height="21"/>
@@ -311,7 +305,6 @@
                                 <constraints>
                                     <constraint firstItem="XxP-43-BST" firstAttribute="top" secondItem="033-1b-kdO" secondAttribute="top" constant="12" id="6ny-NV-fo2"/>
                                     <constraint firstAttribute="trailing" secondItem="Al5-yL-76y" secondAttribute="trailing" constant="20" id="Eaz-ga-KAf"/>
-                                    <constraint firstAttribute="width" constant="317" id="Ikt-GV-Yt9"/>
                                     <constraint firstItem="1uz-kH-pK1" firstAttribute="top" secondItem="Al5-yL-76y" secondAttribute="bottom" constant="20" id="PHL-ec-yK7"/>
                                     <constraint firstAttribute="centerX" secondItem="1uz-kH-pK1" secondAttribute="centerX" id="pMv-X6-K6S"/>
                                     <constraint firstItem="Al5-yL-76y" firstAttribute="top" secondItem="033-1b-kdO" secondAttribute="top" constant="8" id="q9O-qY-SOl"/>
@@ -324,108 +317,22 @@
                         <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="033-1b-kdO" firstAttribute="centerX" secondItem="qpd-vq-BBj" secondAttribute="centerX" id="2fw-6S-UDW"/>
-                            <constraint firstItem="033-1b-kdO" firstAttribute="centerY" secondItem="qpd-vq-BBj" secondAttribute="centerY" id="8cE-pG-14W"/>
                             <constraint firstItem="033-1b-kdO" firstAttribute="leading" secondItem="qpd-vq-BBj" secondAttribute="leadingMargin" constant="13" id="EdR-Iw-dDk"/>
                             <constraint firstItem="033-1b-kdO" firstAttribute="centerX" secondItem="qpd-vq-BBj" secondAttribute="centerX" id="IFa-kA-OMe"/>
+                            <constraint firstItem="033-1b-kdO" firstAttribute="centerX" secondItem="qpd-vq-BBj" secondAttribute="centerX" id="Qii-J5-dk5"/>
+                            <constraint firstItem="033-1b-kdO" firstAttribute="centerY" secondItem="qpd-vq-BBj" secondAttribute="centerY" id="WCU-zE-Q3i"/>
+                            <constraint firstItem="033-1b-kdO" firstAttribute="centerY" secondItem="qpd-vq-BBj" secondAttribute="centerY" id="c2l-4G-lyT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Owner" id="iMz-pU-hWC"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
                         <outlet property="controlButton" destination="1uz-kH-pK1" id="0XT-FJ-wUx"/>
                         <outlet property="nameField" destination="Al5-yL-76y" id="DQR-PI-xDM"/>
-                        <outlet property="titleItem" destination="iMz-pU-hWC" id="NEu-bL-dYP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9d-32-Isp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2561" y="3815"/>
-        </scene>
-        <!--Owner Page-->
-        <scene sceneID="Ggg-Of-ujC">
-            <objects>
-                <viewController storyboardIdentifier="OwnerPageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wGP-Ky-mtH" customClass="OwnerPageViewController" customModule="TransportTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pNL-n0-xkz"/>
-                        <viewControllerLayoutGuide type="bottom" id="TUL-k2-jRb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8CE-G8-Pa5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="74q-NM-vmi">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                                <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="separatorColor" red="0.0008393895796" green="0.67225955309999996" blue="0.0013022658149999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="74q-NM-vmi" firstAttribute="leading" secondItem="8CE-G8-Pa5" secondAttribute="leading" id="HU0-Bj-jmo"/>
-                            <constraint firstItem="TUL-k2-jRb" firstAttribute="top" secondItem="74q-NM-vmi" secondAttribute="bottom" id="PRq-Ms-rD2"/>
-                            <constraint firstAttribute="trailing" secondItem="74q-NM-vmi" secondAttribute="trailing" id="Zx4-r7-JxP"/>
-                            <constraint firstItem="74q-NM-vmi" firstAttribute="top" secondItem="8CE-G8-Pa5" secondAttribute="top" id="glC-Uu-rLO"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Owner Page" id="WBX-zx-ZF7">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="veA-vX-9nG">
-                            <color key="tintColor" red="0.0008393895796" green="0.67225955309999996" blue="0.0013022658149999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <connections>
-                                <action selector="editButtonDidPressed" destination="wGP-Ky-mtH" id="9Fv-VQ-yVQ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
-                    <connections>
-                        <outlet property="tableView" destination="74q-NM-vmi" id="gwE-bm-nqx"/>
-                        <segue destination="dZd-72-ZfS" kind="show" identifier="selectCar" id="1Wl-cd-W9T"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NNf-Je-CyS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4074" y="3027"/>
-        </scene>
-        <!--Select car for owner-->
-        <scene sceneID="DwY-BY-ZwN">
-            <objects>
-                <viewController storyboardIdentifier="SelectCarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dZd-72-ZfS" customClass="SelectCarViewController" customModule="TransportTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Myl-zQ-059"/>
-                        <viewControllerLayoutGuide type="bottom" id="UFC-CX-StI"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Woj-BF-vAD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gNq-ru-pw8">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                                <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="gNq-ru-pw8" secondAttribute="trailing" id="D5e-uR-qKG"/>
-                            <constraint firstItem="gNq-ru-pw8" firstAttribute="leading" secondItem="Woj-BF-vAD" secondAttribute="leading" id="aQI-Af-AZ6"/>
-                            <constraint firstItem="UFC-CX-StI" firstAttribute="top" secondItem="gNq-ru-pw8" secondAttribute="bottom" id="vSq-Fn-fpm"/>
-                            <constraint firstItem="gNq-ru-pw8" firstAttribute="top" secondItem="Woj-BF-vAD" secondAttribute="top" id="wdZ-rN-gzM"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Select car for owner" id="ydE-U9-2Sa"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
-                    <connections>
-                        <outlet property="tableView" destination="gNq-ru-pw8" id="4DQ-K0-Dmb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4PU-sC-7vh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5119" y="3027"/>
+            <point key="canvasLocation" x="2502" y="3468"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="car" width="28" height="28"/>
-        <image name="owner" width="28" height="28"/>
-    </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="zwl-5f-Lhe"/>
-    </inferredMetricsTieBreakers>
 </document>

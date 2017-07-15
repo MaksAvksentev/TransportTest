@@ -10,8 +10,7 @@ import UIKit
 
 class CarManagmentViewController: DataManagmentViewController {
 
-    var entity: CarEntity?
-    var owner_id: String = "0"
+    var car: CarEntity?
     
     class var className: String {
         
@@ -19,7 +18,6 @@ class CarManagmentViewController: DataManagmentViewController {
     }
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
 
         self.configureFields()
@@ -27,38 +25,25 @@ class CarManagmentViewController: DataManagmentViewController {
     
     func configureFields() {
         
-        
-        if let tempYear = entity?.year, let name = entity?.name {
-        
-            self.nameField.text = name
-            self.year.text = String(describing: tempYear)
-        }
+        self.nameField.text = car?.name
+        self.year.text = String(describing: car?.year)
     }
     
     //MARK: - Actions
     @IBAction override func controlButtonPressed() {
         
-        let car = CarEntity(id: self.entity?.id ?? "", name: self.nameField.text!, year: Int32(self.year.text!)!, owner_id: self.entity?.owner_id ?? owner_id)
-        
+        super.controlButtonPressed()
+        let car = CarEntity(id: self.car?.id ?? "", name: self.nameField.text!, year: Int32(self.year.text!)!, owner_id: self.car?.owner_id ?? "")
         switch self.managmentState {
         case .Add:
-            
-            if !DatabaseManager.shared.operation(withEntity: car, method: .create, forType: self.entityType) {
-                
-                log.error("Error operation with database", LogModule: .CoreData)
-                self.presentDataBaseAlert()
-            }
+            let _ = DatabaseManager.shared.operation(withEntity: car, method: .create, forType: self.entityType)
         case .Edit:
-            
-            if !DatabaseManager.shared.operation(withEntity: car, method: .update, forType: self.entityType) {
-                
-                log.error("Error operation with database", LogModule: .CoreData)
-                self.presentDataBaseAlert()
-            }
+            let _ = DatabaseManager.shared.operation(withEntity: car, method: .update, forType: self.entityType)
         default:
             break
         }
-    
+        
         let _ = self.navigationController?.popViewController(animated: true)
     }
+
 }

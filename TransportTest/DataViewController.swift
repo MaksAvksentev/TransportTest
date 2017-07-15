@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DataViewController: BaseViewController, UITableViewDelegate {
+class DataViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -24,37 +24,15 @@ class DataViewController: BaseViewController, UITableViewDelegate {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-        super.viewDidAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        guard let id = segue.identifier, let controller = segue.destination as? OwnerPageViewController else {
-            
-            return
-        }
-        
-        switch id {
-        case StoryboardSegues.fromOwnersToOwnerPage:
-            controller.owner = sender as? OwnerEntity
-        case StoryboardSegues.fromCarsToOwnerPage:
-            controller.owner = sender as? OwnerEntity
-        default:
-            break
-        }
-    }
-    
-    //MARK: - Configure
+    //MARK: -
     func configureTableView() {
-        
+    
         self.tableView.register(OwnerTableViewCell.nib(), forCellReuseIdentifier: OwnerTableViewCell.reuseIdentifier)
         self.tableView.register(CarTableViewCell.nib(), forCellReuseIdentifier: CarTableViewCell.reuseIdentifier)
         self.tableView.delegate = self
     }
     
-    //MARK: - Actions
     @IBAction func addEntity() {}
+    
+    //MARK: - UITableViewDelegate
 }

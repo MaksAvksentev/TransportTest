@@ -9,12 +9,6 @@
 import Foundation
 import UIKit
 
-struct StoryboardSegues {
-
-    static let fromCarsToOwnerPage = "FromCarsToOwnerPage"
-    static let fromOwnersToOwnerPage = "FromOwnersToOwnerPage"
-}
-
 fileprivate enum Storyboard : String {
     
     case main = "Main"
@@ -42,11 +36,6 @@ extension UIStoryboard {
     class func loadCarManagmentFromMain(_ identifier: String) -> CarManagmentViewController {
         
         return loadFromMain(CarManagmentViewController.className) as! CarManagmentViewController
-    }
-    
-    class func loadSelectCarFromMain(_ identifier: String) -> SelectCarViewController {
-        
-        return loadFromMain(SelectCarViewController.className) as! SelectCarViewController
     }
 
 }

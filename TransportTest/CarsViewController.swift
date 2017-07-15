@@ -8,26 +8,22 @@
 
 import UIKit
 
-@IBDesignable class CarsViewController: DataViewController {
+class CarsViewController: DataViewController {
     
     var dataSource = CarsDataSource()
     
-    //MARK: - LifeCycle
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         self.tableView.dataSource = self.dataSource
+        self.tableView.delegate = self
         self.dataSource.initialize()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        super.prepare(for: segue, sender: sender)
     }
     
     //MARK: - Actions
@@ -42,29 +38,13 @@ import UIKit
     //MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        tableView.deselectRow(at: indexPath, animated: true)
-        let car = self.dataSource.dataArray[indexPath.row]
-        let tempDataSource = OwnersDataSource()
-        
-        if car.owner_id != "0", let owner = tempDataSource.getEntity(withId: car.owner_id) {
-            
-            self.performSegue(withIdentifier: StoryboardSegues.fromCarsToOwnerPage, sender: owner)
-        } else {
-            
-            self.presentAlert(withTitle: "Attention", andMessage: "This car hasn't owner.")
-        }
     }
     
-     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
             
-            if !self.dataSource.delete(entity: self.dataSource.dataArray[indexPath.row]) {
-                
-                log.error("Error operation with database", LogModule: .CoreData)
-                self.presentDataBaseAlert()
-            }
-            
+            let _ = self.dataSource.delete(entity: self.dataSource.dataArray[indexPath.row])
             self.tableView.reloadData()
         }
         
@@ -73,7 +53,7 @@ import UIKit
             let viewController = UIStoryboard.loadCarManagmentFromMain(CarManagmentViewController.className)
             viewController.entityType = EntityStoreType.Cars
             viewController.managmentState = .Edit
-            viewController.entity = self.dataSource.dataArray[indexPath.row]
+            viewController.car = self.dataSource.dataArray[indexPath.row]
             self.navigationController?.pushViewController(viewController, animated: true)
         }
         
