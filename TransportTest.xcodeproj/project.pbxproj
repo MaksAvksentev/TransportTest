@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		283BF72E1F199FD600390C8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283BF72C1F199FD600390C8F /* Main.storyboard */; };
 		288FE89F1F16653A00C8DF71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE89E1F16653A00C8DF71 /* AppDelegate.swift */; };
+		288FE8A41F16653A00C8DF71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 288FE8A21F16653A00C8DF71 /* Main.storyboard */; };
 		288FE8A61F16653A00C8DF71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 288FE8A51F16653A00C8DF71 /* Assets.xcassets */; };
+		288FE8A91F16653A00C8DF71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 288FE8A71F16653A00C8DF71 /* LaunchScreen.storyboard */; };
 		288FE8B51F1676B500C8DF71 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE8B41F1676B500C8DF71 /* DatabaseManager.swift */; };
 		288FE8B81F1676DC00C8DF71 /* CarEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE8B71F1676DC00C8DF71 /* CarEntity.swift */; };
 		288FE8BA1F1676E700C8DF71 /* OwnerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE8B91F1676E700C8DF71 /* OwnerEntity.swift */; };
@@ -28,24 +29,18 @@
 		288FE8F01F17FD5000C8DF71 /* CarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE8EF1F17FD5000C8DF71 /* CarsViewController.swift */; };
 		288FE8F21F17FD6900C8DF71 /* OwnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE8F11F17FD6900C8DF71 /* OwnersViewController.swift */; };
 		288FE8F51F1820B600C8DF71 /* DataManagmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE8F41F1820B600C8DF71 /* DataManagmentViewController.swift */; };
+		288FE8F81F18214A00C8DF71 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE8F71F18214A00C8DF71 /* DataViewController.swift */; };
 		288FE8FE1F182F1A00C8DF71 /* DatabaseUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE8FD1F182F1A00C8DF71 /* DatabaseUtilities.swift */; };
 		288FE9001F18382600C8DF71 /* CarManagmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE8FF1F18382600C8DF71 /* CarManagmentViewController.swift */; };
 		288FE9021F18383C00C8DF71 /* OwnerManagmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE9011F18383C00C8DF71 /* OwnerManagmentViewController.swift */; };
 		288FE9041F18448100C8DF71 /* StoryboardUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE9031F18448100C8DF71 /* StoryboardUtilities.swift */; };
-		288FE9061F1869B100C8DF71 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE9051F1869B100C8DF71 /* BaseTableViewCell.swift */; };
-		288FE9081F186DD000C8DF71 /* OwnerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE9071F186DD000C8DF71 /* OwnerPageViewController.swift */; };
-		288FE90A1F186E3D00C8DF71 /* SelectCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE9091F186E3D00C8DF71 /* SelectCarViewController.swift */; };
-		288FE90F1F1912D600C8DF71 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE90E1F1912D600C8DF71 /* Utilities.swift */; };
-		288FE9111F196F7D00C8DF71 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288FE9101F196F7D00C8DF71 /* Logger.swift */; };
-		28B586361F1989030077A2B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 288FE8A71F16653A00C8DF71 /* LaunchScreen.storyboard */; };
-		28B586381F198A430077A2B1 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B586371F198A430077A2B1 /* DataViewController.swift */; };
 		3B438D4D6A81089C5C1A71C2 /* Pods_TransportTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88FD9E6F7A9A5C1543D48EE /* Pods_TransportTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		283BF72D1F199FD600390C8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		288FE89B1F16653A00C8DF71 /* TransportTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransportTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		288FE89E1F16653A00C8DF71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		288FE8A31F16653A00C8DF71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		288FE8A51F16653A00C8DF71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		288FE8A81F16653A00C8DF71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		288FE8AA1F16653A00C8DF71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,16 +64,11 @@
 		288FE8EF1F17FD5000C8DF71 /* CarsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarsViewController.swift; sourceTree = "<group>"; };
 		288FE8F11F17FD6900C8DF71 /* OwnersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnersViewController.swift; sourceTree = "<group>"; };
 		288FE8F41F1820B600C8DF71 /* DataManagmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagmentViewController.swift; sourceTree = "<group>"; };
+		288FE8F71F18214A00C8DF71 /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		288FE8FD1F182F1A00C8DF71 /* DatabaseUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseUtilities.swift; sourceTree = "<group>"; };
 		288FE8FF1F18382600C8DF71 /* CarManagmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarManagmentViewController.swift; sourceTree = "<group>"; };
 		288FE9011F18383C00C8DF71 /* OwnerManagmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerManagmentViewController.swift; sourceTree = "<group>"; };
 		288FE9031F18448100C8DF71 /* StoryboardUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardUtilities.swift; sourceTree = "<group>"; };
-		288FE9051F1869B100C8DF71 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
-		288FE9071F186DD000C8DF71 /* OwnerPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerPageViewController.swift; sourceTree = "<group>"; };
-		288FE9091F186E3D00C8DF71 /* SelectCarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCarViewController.swift; sourceTree = "<group>"; };
-		288FE90E1F1912D600C8DF71 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		288FE9101F196F7D00C8DF71 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		28B586371F198A430077A2B1 /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		B3196711C0CA6FCBEC5CBA32 /* Pods-TransportTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransportTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransportTest/Pods-TransportTest.debug.xcconfig"; sourceTree = "<group>"; };
 		D88FD9E6F7A9A5C1543D48EE /* Pods_TransportTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransportTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE32270CC46E280DCB2B209C /* Pods-TransportTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransportTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransportTest/Pods-TransportTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,8 +114,8 @@
 				288FE8C51F16D06000C8DF71 /* Views */,
 				288FE8C41F16D05500C8DF71 /* ViewControllers */,
 				288FE89E1F16653A00C8DF71 /* AppDelegate.swift */,
+				288FE8A21F16653A00C8DF71 /* Main.storyboard */,
 				288FE8A51F16653A00C8DF71 /* Assets.xcassets */,
-				283BF72C1F199FD600390C8F /* Main.storyboard */,
 				288FE8A71F16653A00C8DF71 /* LaunchScreen.storyboard */,
 				288FE8AA1F16653A00C8DF71 /* Info.plist */,
 			);
@@ -170,7 +160,6 @@
 				288FE8DD1F17EAE400C8DF71 /* BaseViewController.swift */,
 				288FE8F31F1800F400C8DF71 /* DataViewControllers */,
 				288FE8F61F1820F000C8DF71 /* ManagmentViewControllers */,
-				288FE90B1F187A3600C8DF71 /* OwnerViewControllers */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -180,7 +169,6 @@
 			children = (
 				288FE8E81F17FBB400C8DF71 /* OwnerCell */,
 				288FE8E71F17FBAA00C8DF71 /* CarCell */,
-				288FE9051F1869B100C8DF71 /* BaseTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -190,8 +178,6 @@
 			children = (
 				288FE8FD1F182F1A00C8DF71 /* DatabaseUtilities.swift */,
 				288FE9031F18448100C8DF71 /* StoryboardUtilities.swift */,
-				288FE90E1F1912D600C8DF71 /* Utilities.swift */,
-				288FE9101F196F7D00C8DF71 /* Logger.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -227,7 +213,7 @@
 		288FE8F31F1800F400C8DF71 /* DataViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				28B586371F198A430077A2B1 /* DataViewController.swift */,
+				288FE8F71F18214A00C8DF71 /* DataViewController.swift */,
 				288FE8EF1F17FD5000C8DF71 /* CarsViewController.swift */,
 				288FE8F11F17FD6900C8DF71 /* OwnersViewController.swift */,
 			);
@@ -242,15 +228,6 @@
 				288FE9011F18383C00C8DF71 /* OwnerManagmentViewController.swift */,
 			);
 			name = ManagmentViewControllers;
-			sourceTree = "<group>";
-		};
-		288FE90B1F187A3600C8DF71 /* OwnerViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				288FE9071F186DD000C8DF71 /* OwnerPageViewController.swift */,
-				288FE9091F186E3D00C8DF71 /* SelectCarViewController.swift */,
-			);
-			name = OwnerViewControllers;
 			sourceTree = "<group>";
 		};
 		9C7E314BCDDA3C967485F161 /* Pods */ = {
@@ -326,11 +303,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28B586361F1989030077A2B1 /* LaunchScreen.storyboard in Resources */,
+				288FE8A91F16653A00C8DF71 /* LaunchScreen.storyboard in Resources */,
 				288FE8D31F16EEBD00C8DF71 /* transport.sqlite in Resources */,
 				288FE8E61F17FB8100C8DF71 /* CarTableViewCell.xib in Resources */,
-				283BF72E1F199FD600390C8F /* Main.storyboard in Resources */,
 				288FE8A61F16653A00C8DF71 /* Assets.xcassets in Resources */,
+				288FE8A41F16653A00C8DF71 /* Main.storyboard in Resources */,
 				288FE8EE1F17FBDC00C8DF71 /* OwnerTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,24 +371,19 @@
 				288FE9021F18383C00C8DF71 /* OwnerManagmentViewController.swift in Sources */,
 				288FE8DA1F17AFCD00C8DF71 /* OwnersDataSource.swift in Sources */,
 				288FE8E51F17FB8100C8DF71 /* CarTableViewCell.swift in Sources */,
-				288FE9061F1869B100C8DF71 /* BaseTableViewCell.swift in Sources */,
 				288FE9001F18382600C8DF71 /* CarManagmentViewController.swift in Sources */,
-				288FE90F1F1912D600C8DF71 /* Utilities.swift in Sources */,
 				288FE8BA1F1676E700C8DF71 /* OwnerEntity.swift in Sources */,
-				288FE9081F186DD000C8DF71 /* OwnerPageViewController.swift in Sources */,
 				288FE8F21F17FD6900C8DF71 /* OwnersViewController.swift in Sources */,
-				288FE90A1F186E3D00C8DF71 /* SelectCarViewController.swift in Sources */,
 				288FE8FE1F182F1A00C8DF71 /* DatabaseUtilities.swift in Sources */,
 				288FE8D61F177D1300C8DF71 /* BaseDataSource.swift in Sources */,
 				288FE8D81F17AFBC00C8DF71 /* CarsDataSource.swift in Sources */,
-				28B586381F198A430077A2B1 /* DataViewController.swift in Sources */,
 				288FE9041F18448100C8DF71 /* StoryboardUtilities.swift in Sources */,
 				288FE8DE1F17EAE400C8DF71 /* BaseViewController.swift in Sources */,
 				288FE8F51F1820B600C8DF71 /* DataManagmentViewController.swift in Sources */,
 				288FE8B81F1676DC00C8DF71 /* CarEntity.swift in Sources */,
 				288FE8C11F167C7600C8DF71 /* DatabaseMethods.swift in Sources */,
 				288FE89F1F16653A00C8DF71 /* AppDelegate.swift in Sources */,
-				288FE9111F196F7D00C8DF71 /* Logger.swift in Sources */,
+				288FE8F81F18214A00C8DF71 /* DataViewController.swift in Sources */,
 				288FE8ED1F17FBDC00C8DF71 /* OwnerTableViewCell.swift in Sources */,
 				288FE8B51F1676B500C8DF71 /* DatabaseManager.swift in Sources */,
 				288FE8F01F17FD5000C8DF71 /* CarsViewController.swift in Sources */,
@@ -421,10 +393,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		283BF72C1F199FD600390C8F /* Main.storyboard */ = {
+		288FE8A21F16653A00C8DF71 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				283BF72D1F199FD600390C8F /* Base */,
+				288FE8A31F16653A00C8DF71 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

@@ -14,12 +14,16 @@ enum DataManagmentState {
     case Undefined
 }
 
-class DataManagmentViewController: BaseViewController {
+protocol DataMangmentProtocol {
+    
+    func typeOfManagment() -> DataManagmentState
+}
+
+class DataManagmentViewController: UIViewController, DataMangmentProtocol {
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var year: UITextField!
     @IBOutlet weak var controlButton: UIButton!
-    @IBOutlet weak var titleItem: UINavigationItem!
     
     var entityType: EntityStoreType = .Undefined
     var managmentState: DataManagmentState = .Undefined
@@ -40,61 +44,27 @@ class DataManagmentViewController: BaseViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
-        self.configureTextFields()
-        self.self.hideKeyboardWhenTappedAround()
+        
+        self.configureButton()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-        super.viewWillAppear(animated)
-        
-        self.configureNavigationBarAndButton()
-        self.tabBarController?.tabBar.isHidden = true
-        self.navigationController?.navigationBar.topItem?.title = ""
-    }
-
     //MARK: - Private
-    private func configureNavigationBarAndButton() {
+    private func configureButton() {
         
-        self.navigationController?.navigationBar.topItem?.title = ""
-        
-        switch self.managmentState {
+        switch managmentState {
         case .Add:
-            self.titleItem.title = "Add"
-            self.controlButton.setTitle("Add", for: .normal)
+            self.controlButton.setTitle("Add", for: .application)
         default:
-            self.titleItem.title = "Edit"
-            self.controlButton.setTitle("Save", for: .normal)
+            self.controlButton.setTitle("Save", for: .application)
         }
-    }
-    
-    func configureTextFields() {
-    
-        self.controlButton.isEnabled = false
-        self.year.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
-        self.nameField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
-    }
-    
-    //MARK: - Check TextFields
-    func editingChanged(_ textField: UITextField) {
-        
-        if textField.text?.characters.count == 1 {
-            if textField.text?.characters.first == " " {
-                textField.text = ""
-                return
-            }
-        }
-        
-        guard let name = nameField.text, !name.isEmpty, let tempYear = year.text, !tempYear.isEmpty, let tempYearInt = Int(tempYear), tempYearInt>=1758, tempYearInt<=2017
-            else {
-                controlButton.isEnabled = false
-                return
-        }
-
-        controlButton.isEnabled = true
     }
     
     //MARK: - Actions
-    func controlButtonPressed() { }
+    @IBAction func controlButtonPressed() {}
+    
+    //MARK: - DataMangmentProtocol
+    func typeOfManagment() -> DataManagmentState {
+        
+        return .Undefined
+    }
 }

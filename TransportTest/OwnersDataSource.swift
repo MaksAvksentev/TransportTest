@@ -10,11 +10,6 @@ import UIKit
 
 class OwnersDataSource: BaseDataSource<OwnerEntity> {
 
-    //MARK: - Init
-    required init() {
-        super.init()
-    }
-    
     //MARK: - DataSourceProtocol
     override func typeForDataSource() -> EntityStoreType {
         

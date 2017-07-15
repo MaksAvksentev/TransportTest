@@ -8,10 +8,37 @@
 
 import UIKit
 
-class CarTableViewCell: BaseTableViewCell {
+class CarTableViewCell: UITableViewCell {
 
-    override class var className: String {
+    @IBOutlet weak var carName: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
+    
+    class var className: String {
     
         return "CarTableViewCell"
+    }
+    
+    class var reuseIdentifier: String {
+        
+        return self.className
+    }
+    
+    //MARK: - LifeCycle
+    override func awakeFromNib() {
+        
+        super.awakeFromNib()
+        
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        
+        super.setSelected(selected, animated: animated)
+        
+    }
+    
+    //MARK: - Nib
+    class func nib() -> UINib {
+        
+        return UINib(nibName: self.className, bundle: Bundle.main)
     }
 }
